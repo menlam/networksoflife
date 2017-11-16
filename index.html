@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gene</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="nol.css">
+</head>
+<body>
+  <div class="main">
+   <div class="container">
+    <h2>Gene</h2>
+    <ul class="nav nav-pills panel panel-primary">
+      <li><a data-toggle="tab" href="#home">Search</a></li>
+      <li><a data-toggle="tab" href="#menu1">About</a></li>
+    </ul>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="m.jpg" alt="genes" height="250px">
+        </div>
+
+        <div class="item">
+          <img src="m1.jpg" alt="genes" height="250px">
+        </div>
+
+        <div class="item">
+          <img src="biotech_seo.jpg" alt="genes" height="250px">
+        </div>
+      </div>
+
+
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <div class="form-group">
+          <div class="input-group input-file">
+            <input type="text" class="form-control upLd" placeholder='Choose a file' />     
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-choose" id="choose" type="button">Choose</button>
+            </span>
+
+
+          </div>
+        </div>
+        <input class="form-control" id="myInput" type="text" placeholder="Search">
+        <button type="submit" class="btn btn-primary pull-right" id="submitB">Submit</button>
+        <br>
+        <ul class="list-group" id="myList">
+          <li class="list-group-item">A1BG</li>
+          <li class="list-group-item">alpha-1-B glycoprotein;</li>
+
+        </ul>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <h3>Networks of Life</h3>
+        <p>about about/p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myList li").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
+</html>
